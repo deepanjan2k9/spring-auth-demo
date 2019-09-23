@@ -14,10 +14,12 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 	
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
-		// TODO Auto-generated method stub
+		
+		//save username and password of Authentication object parameter to local variables 
 		String username = auth.getName();
 		String password = auth.getCredentials().toString();
 		
+		//compare given username and password with those stored
 		if("externaluser".contentEquals(username) && "pass".equals(password)) {
 			return new UsernamePasswordAuthenticationToken(username, password, Collections.emptyList());
 		} else {
