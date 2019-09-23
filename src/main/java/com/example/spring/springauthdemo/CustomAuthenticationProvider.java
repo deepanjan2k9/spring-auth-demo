@@ -3,13 +3,15 @@ package com.example.spring.springauthdemo;
 import java.util.Collections;
 
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 
-@ComponentScan("com.example.spring.springauthdemo")
+@Configuration
+@ComponentScan
 public class CustomAuthenticationProvider implements AuthenticationProvider {
 	
 	@Override
